@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPCalcBackend", "GPCalcBackend\GPCalcBackend.csproj", "{6523A4EB-B57B-4562-92AA-2D9AF05473F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPFUI", "WPFUI", "{03DAA0C5-27C5-49E1-84F0-E57068BCBFD0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ViewModels", "ViewModels", "{363992FD-958A-49AE-9891-62A38121491D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFCalcUI", "WPFCalcUI\WPFCalcUI.csproj", "{2FB5D7AA-67F4-4456-8FDE-0591C506B783}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GPCalcBackend", "GPCalcBackend", "{BAE23E1A-F8AE-4478-A515-EA9CB2E94093}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6523A4EB-B57B-4562-92AA-2D9AF05473F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6523A4EB-B57B-4562-92AA-2D9AF05473F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6523A4EB-B57B-4562-92AA-2D9AF05473F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6523A4EB-B57B-4562-92AA-2D9AF05473F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FB5D7AA-67F4-4456-8FDE-0591C506B783}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FB5D7AA-67F4-4456-8FDE-0591C506B783}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FB5D7AA-67F4-4456-8FDE-0591C506B783}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FB5D7AA-67F4-4456-8FDE-0591C506B783}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6523A4EB-B57B-4562-92AA-2D9AF05473F8} = {BAE23E1A-F8AE-4478-A515-EA9CB2E94093}
+		{2FB5D7AA-67F4-4456-8FDE-0591C506B783} = {03DAA0C5-27C5-49E1-84F0-E57068BCBFD0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F957A17F-5D5E-416D-B6A5-6A91A6896920}
+	EndGlobalSection
+EndGlobal

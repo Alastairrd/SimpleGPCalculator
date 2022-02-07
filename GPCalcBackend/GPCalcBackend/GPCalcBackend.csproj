@@ -41,8 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GPInput.cs" />
+    <Compile Include="Models\Calculator.cs" />
+    <Compile Include="Models\CostCalcType.cs" />
+    <Compile Include="Models\GPCalcType.cs" />
+    <Compile Include="Models\SaleCalcType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\CalcSession.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

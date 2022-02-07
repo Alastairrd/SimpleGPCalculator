@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GPCalcBackend.ViewModels;
 
 namespace WPFCalcUI
 {
@@ -20,9 +21,14 @@ namespace WPFCalcUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly CalcSession _calcSession = new CalcSession();
         public MainWindow()
         {
             InitializeComponent();
+
+            DataContext = _calcSession;
+
+            
         }
     }
 }

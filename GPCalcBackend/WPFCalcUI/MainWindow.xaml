@@ -4,8 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFCalcUI"
+        xmlns:viewModels="clr-namespace:GPCalcBackend.ViewModels;assembly=GPCalcBackend"
+        d:DataContext="{d:DesignInstance viewModels:CalcSession}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -16,6 +19,51 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <!--OUTPUT CHOICE-->
+        <Grid Grid.Row="0" Grid.Column="0"
+              HorizontalAlignment="Center"
+              VerticalAlignment="Center">
 
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+            </Grid.ColumnDefinitions>
+
+            <ComboBox Name="InputType"
+                  Grid.Row="0" Grid.Column="0"
+                  ItemsSource="{Binding Calculator.CalcTypes}"
+                  SelectedItem="{Binding CurrentCalcType, 
+                                   Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+        
+        <!--INPUT CONTROLS-->
+        <Grid Grid.Row="1" Grid.Column="0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--TODO bind input labels to changing inputs-->
+            <StackPanel Grid.Row="1" Grid.Column="0">
+                <Label Content="Input 1" HorizontalAlignment="Center"/>
+                <TextBox Width="100" MaxLength="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <Label Content="Input 2" HorizontalAlignment="Center"/>
+                <TextBox Width="100" MaxLength="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </StackPanel>
+
+        </Grid>
     </Grid>
 </Window>

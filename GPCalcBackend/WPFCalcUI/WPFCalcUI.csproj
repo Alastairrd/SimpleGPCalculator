@@ -94,5 +94,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GPCalcBackend\GPCalcBackend.csproj">
+      <Project>{6523a4eb-b57b-4562-92aa-2d9af05473f8}</Project>
+      <Name>GPCalcBackend</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

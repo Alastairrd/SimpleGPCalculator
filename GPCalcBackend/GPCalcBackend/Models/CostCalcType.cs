@@ -8,6 +8,7 @@ namespace GPCalcBackend.Models
 {
     public class CostCalcType
     {
+        // todo get rid of, change to single calc type with factory
         public string Name { get; set; }
         public string SaleInput 
         {

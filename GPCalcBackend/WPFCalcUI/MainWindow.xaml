@@ -35,6 +35,7 @@
             <ComboBox Name="InputType"
                   Grid.Row="0" Grid.Column="0"
                   ItemsSource="{Binding Calculator.CalcTypes}"
+                  DisplayMemberPath="Name"
                   SelectedItem="{Binding CurrentCalcType, 
                                    Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
@@ -55,12 +56,12 @@
 
             <!--TODO bind input labels to changing inputs-->
             <StackPanel Grid.Row="1" Grid.Column="0">
-                <Label Content="Input 1" HorizontalAlignment="Center"/>
+                <Label Content="{Binding CurrentCalcType.Input1}" HorizontalAlignment="Center"/>
                 <TextBox Width="100" MaxLength="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </StackPanel>
 
             <StackPanel Grid.Row="1" Grid.Column="1">
-                <Label Content="Input 2" HorizontalAlignment="Center"/>
+                <Label Content="{Binding CurrentCalcType.Input2}" HorizontalAlignment="Center"/>
                 <TextBox Width="100" MaxLength="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </StackPanel>
 

@@ -10,16 +10,18 @@ namespace GPCalcBackend.Models
     {
         public string Name { get; set; }
         public int ID;
+        private string _input1;
+        private string _input2;
         public string Input1
         {
-            get { return Input1; }
-            set { Input1 = value; }
+            get => _input1; 
+            set => _input1 = value;
         }
 
         public string Input2
         {
-            get { return Input2; }
-            set { Input2 = value; }
+            get => _input2; 
+            set => _input2 = value; 
         }
     }
 }

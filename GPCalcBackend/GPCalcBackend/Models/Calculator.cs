@@ -1,10 +1,12 @@
-﻿using System;
+﻿using GPCalcBackend.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using GPCalcBackend.Factories;
 
 namespace GPCalcBackend
 {
@@ -13,51 +15,57 @@ namespace GPCalcBackend
         public event PropertyChangedEventHandler PropertyChanged;
 
         public float OutputValue = 0;
-        public string CurrentCalcType { get; set; }
+        public CalcType CurrentCalcType { get; set; }
 
+        public List<CalcType> CalcTypes { get; set; }
 
-        public List<string> CalcTypes { get; set; }
-
-        //TODO remake calc type classes into single calctype class
-        //set calctypes as list of calctypes instead of list of string
         public Calculator()
         {
-            CurrentCalcType = "Gp Output";
+            CalcTypes = new List<CalcType>();
 
-            CalcTypes = new List<string>();
-            CalcTypes.Add("Sale Output");
-            CalcTypes.Add("GP Output");
-            CalcTypes.Add("Cost Output");
+            CalcTypes.Add(CalcTypeFactory.LoadCalcType(1)); //cost calc
+            CalcTypes.Add(CalcTypeFactory.LoadCalcType(2)); //gp calc
+            CalcTypes.Add(CalcTypeFactory.LoadCalcType(3)); //sale calc
+
+            CurrentCalcType = CalcTypes.FirstOrDefault(c => c.ID == 2); //sets default to gp
 
             OnPropertyChanged();
         }
-        public float GPCalculation(float costinput, float salepriceinput)
+
+        public double Calculate(float input1, float input2)
         {
-            float output;
+            float output = 0;
 
-            output = (salepriceinput - costinput) / salepriceinput * 100;
+            int id = CurrentCalcType.ID;
 
-            return output;
+            switch(id)
+            {
+                case 1: //Cost price calculation
+
+                    output = input1 - input2 * input1 / 100; //sale - gp * sale / 100
+
+                    return output;
+                    
+
+                case 2: //gp margin calculator
+
+                    output = (input1 - input2) / input1 * 100; //(sale - cost) / sale * 100;
+
+                    return output;
+                    
+
+                case 3: //sale price calculator
+
+                    output = input2 / (1 - (input1 / 100)); // costinput / (1 - (gpinput / 100));
+
+                    return output;
+                    
+
+                default:
+                    throw new ArgumentOutOfRangeException("Selected CalcType id matches no known id");
+                    
+            }
         }
-
-        public float SaleCalculation(float costinput, float gpinput)
-        {
-            float output;
-
-            output = costinput / (1 - (gpinput / 100));
-
-            return output;
-        }
-
-        public float CostCalculation(float saleinput, float gpinput)
-        {
-            float output;
-
-            output = saleinput - gpinput * saleinput / 100;
-
-            return output;
-        }
-
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

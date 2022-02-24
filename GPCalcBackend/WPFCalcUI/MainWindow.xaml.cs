@@ -30,5 +30,25 @@ namespace WPFCalcUI
 
             
         }
+
+        public void OnClick_Calculate(object sender, RoutedEventArgs e)
+        {
+            float input1;
+            float input2;
+            
+            if (float.TryParse(Input1.Text, out input1)) //checking to see if input is a float
+            {
+                _calcSession.Input1 = input1;
+            }
+            
+
+            if (float.TryParse(Input2.Text, out input2)) //checking to see if input is a float
+            {
+                _calcSession.Input2 = input2;
+            }
+            
+
+            _calcSession.Calculate();
+        }
     }
 }

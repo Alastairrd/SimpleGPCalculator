@@ -8,7 +8,7 @@
         d:DataContext="{d:DesignInstance viewModels:CalcSession}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -39,31 +39,53 @@
                   SelectedItem="{Binding CurrentCalcType, 
                                    Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
-        
+
         <!--INPUT CONTROLS-->
         <Grid Grid.Row="1" Grid.Column="0">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            
+
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <!--TODO bind input labels to changing inputs-->
+            <!--Inputs boxes-->
             <StackPanel Grid.Row="1" Grid.Column="0">
                 <Label Content="{Binding CurrentCalcType.Input1}" HorizontalAlignment="Center"/>
-                <TextBox Width="100" MaxLength="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBox Name="Input1" Width="100" MaxLength="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </StackPanel>
 
-            <StackPanel Grid.Row="1" Grid.Column="1">
+            <StackPanel Grid.Row="1" Grid.Column="2">
                 <Label Content="{Binding CurrentCalcType.Input2}" HorizontalAlignment="Center"/>
-                <TextBox Width="100" MaxLength="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBox Name="Input2" Width="100" MaxLength="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </StackPanel>
+
+            <!--Calculate button-->
+            <Button Grid.Row="2" Grid.Column="1"
+                    Content="Calculate"
+                    Click="OnClick_Calculate" Margin="0,0,0,58"/>
+
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Output label-->
+            <Label Grid.Column="0"
+                   Content="Output:" VerticalAlignment="Center"/>
+
+            <!--Output label-->
+            <Label Grid.Column="1"
+                   Content="{Binding Output}" VerticalAlignment="Center"/>
 
         </Grid>
     </Grid>

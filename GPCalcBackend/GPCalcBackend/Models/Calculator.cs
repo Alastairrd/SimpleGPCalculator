@@ -32,7 +32,7 @@ namespace GPCalcBackend
             OnPropertyChanged();
         }
 
-        public double Calculate(float input1, float input2)
+        public float Calculate(float input1, float input2)
         {
             float output = 0;
 
@@ -40,7 +40,7 @@ namespace GPCalcBackend
 
             switch(id)
             {
-                case 1: //Cost price calculation
+                case 1: //Cost price calculation // TO DO MATHS NOT WORKING
 
                     output = input1 - input2 * input1 / 100; //sale - gp * sale / 100
 
@@ -49,12 +49,12 @@ namespace GPCalcBackend
 
                 case 2: //gp margin calculator
 
-                    output = (input1 - input2) / input1 * 100; //(sale - cost) / sale * 100;
+                    output = (input1 - input2) / input1; //(sale - cost) / sale * 100;
 
                     return output;
                     
 
-                case 3: //sale price calculator
+                case 3: //sale price calculator //TODO MATHS NOT WORKING
 
                     output = input2 / (1 - (input1 / 100)); // costinput / (1 - (gpinput / 100));
 

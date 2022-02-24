@@ -69,7 +69,7 @@ namespace GPCalcBackend.ViewModels
 
         public void Calculate()
         {
-            Calculator.Calculate(Input1, Input2);
+            Output = Calculator.Calculate(Input1, Input2);
         }
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = "")

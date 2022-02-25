@@ -12,9 +12,9 @@ namespace GPCalcBackend.Factories
         private static List<CalcType> _calcTypes = new List<CalcType>();
         static CalcTypeFactory()
         {
-            CreateCalcType("Cost Price", 1, "Sale Price", "GP Margin");
-            CreateCalcType("GP Margin", 2, "Sale Price", "Cost Price");
-            CreateCalcType("Sale Price", 3, "GP Margin", "Cost Price");
+            CreateCalcType("Cost Price", 1, "Sale Price", "GP Margin %");
+            CreateCalcType("GP Margin %", 2, "Sale Price", "Cost Price");
+            CreateCalcType("Sale Price", 3, "GP Margin %", "Cost Price");
         }
 
         private static void CreateCalcType(string name, int id, string input1, string input2)

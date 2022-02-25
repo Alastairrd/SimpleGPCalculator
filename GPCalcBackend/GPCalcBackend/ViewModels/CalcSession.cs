@@ -21,6 +21,7 @@ namespace GPCalcBackend.ViewModels
             set
             {
                 _currentCalcType = value;
+                Calculator.CurrentCalcType = value;
                 OnPropertyChanged();
             }
         }

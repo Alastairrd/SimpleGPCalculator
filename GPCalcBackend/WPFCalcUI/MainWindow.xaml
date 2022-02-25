@@ -7,7 +7,7 @@
         xmlns:viewModels="clr-namespace:GPCalcBackend.ViewModels;assembly=GPCalcBackend"
         d:DataContext="{d:DesignInstance viewModels:CalcSession}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Simple GP Calculator" Height="300" Width="600">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
         <!--OUTPUT CHOICE-->

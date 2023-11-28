@@ -45,7 +45,7 @@ namespace GPCalcBackend
 
             switch (id)
             {
-                case 1: //Cost price calculation // TO DO MATHS NOT WORKING
+                case 1: //Cost price calculation 
 
                     output = input1 - input2 * input1 / 100; //sale - gp * sale / 100
 
@@ -59,7 +59,7 @@ namespace GPCalcBackend
                     return output;
 
 
-                case 3: //sale price calculator //TODO MATHS NOT WORKING
+                case 3: //sale price calculator 
 
                     output = input2 / (1 - (input1 / 100)); // costinput / (1 - (gpinput / 100));
 
